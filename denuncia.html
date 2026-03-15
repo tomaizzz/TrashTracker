@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denunciar Descarte Irregular - LixoTracker</title>
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container my-5">
+
+    <h1 class="text-center text-success">Denunciar Descarte Irregular</h1>
+    <p class="text-center">
+        Utilize o formulário abaixo para informar locais onde há descarte incorreto de lixo.
+    </p>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+
+            <form>
+
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+                </div>
+
+                <div class="form-group">
+                    <label for="local">Local da denúncia</label>
+                    <input type="text" class="form-control" id="local" placeholder="Ex: Rua X, bairro Y, próximo ao mercado">
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição do problema</label>
+                    <textarea class="form-control" id="descricao" rows="4" placeholder="Descreva o que está acontecendo no local"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="imagem">Anexar imagem</label>
+                    <input type="file" class="form-control-file" id="imagem">
+                </div>
+
+                <button type="submit" class="btn btn-success btn-block">
+                    Enviar Denúncia
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="text-center mb-5">
+    <a href="index.html" class="btn btn-success gradient-btn mt-4">
+        Voltar para a Página Inicial
+    </a>
+</div>
+
+</body>
+</html>
