@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrashTracker - Mapa de Descarte</title>
+</head>
+<body>
+
+<!-- Cabeçalho com logo e nome nem um pouco genérico do site -->
+<header class="fixed-top p-3 text-white d-flex align-items-center justify-content-between">
+    <nav id="logo-home">
+            <img src="assets/img/LogoTT.png" alt="Logo TrashTracker" class="logo-header"> <!-- Logo da empresa -->
+            <h1 class="logo-name">TrashTracker</h1>
+    </nav>
+    <nav>
+        <a href="manual.html" class="btn-nav">Solicitar Coleta</a>
+        <a href="team.html" class="btn-nav">Denúncia</a>
+    </nav>
+</header>
+
+<div class="container" style="margin-top: 100px;">
+    <!-- Barra de Pesquisa -->
+    <div class="input-group mb-3 search-bar">
+        <input type="text" class="form-control" placeholder="Digite a cidade para encontrar pontos de descarte" id="city-input">
+        <div class="input-group-append">
+            <button class="gradient-btn search-btn" onclick="searchCity()">
+                <img src="assets/icon/search.svg" alt="Search">
+            </button>
+        </div>
+    </div>
+
+    
+</div>
+
+
+</body>
+</html>
