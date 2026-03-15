@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    --color-01: #0f5f12;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1518972559570-0a2045e8a8e3'); /* Exemplo de fundo */
+    background-size: cover;
+    color: #2b3e2b;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    align-items: center;
+    background-color: var(--color-01);
+    color: #fff;
+}
+
+header h2 {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.logo-header {
+    margin: 0px;
+    height: 40px;
+    margin-right: 10px;
+}
+nav{
+    height: 100%;
+    display: flex;
+    align-items: center
+}
+
+#logo-home{
+    cursor: pointer;
+}
+
+.logo-name{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    justify-content: center;
+}
+
+nav>a{
+    padding: 0px 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+nav>a:hover{
+    text-decoration: none;
+    color: #bcffc5;    
+}
+
+#map {
+    height: 70vh;
+    border-radius: 8px;
+}
+
+.btn-search{
+    display: flex;
+}
+
+.search-bar, .btn-outline-success, #manual-descarte {
+    border-radius: 8px;
+}
+
+#manual-descarte {
+    background-color: #e9f7e9;
+    padding: 15px;
+    border: 1px solid #d4ecd4;
+}
+
+.btn-floating {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+
+.floating-menu-items {
+    position: fixed;
+    bottom: 70px;
+    right: 15px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efeito gradiente nos botões ao passar o mouse */
+.gradient-btn {
+    background: linear-gradient(to right, #4caf50, #388e3c);
+    color: white;
+    border: none;
+}
+
+.gradient-btn:hover {
+    background: linear-gradient(to right, #81c784, #4caf50);
+}
+
+
+
+.search-btn{
+    margin: 0px 5px;
+    height: 38px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+/* Stilos do Filtro */
+
+.filter-btn{
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    border: 1px solid #0f5f12;
+}
+#fototime{
+    width: 5cm;
+    height: 5cm;
+}
+
+.filter-menu{
+    display: none;
+    text-align: end;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.opt-filter{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    color:white;
+}
+/*Aba Manual*/
+
+.text-justify {
+    text-align: justify;
+}
+

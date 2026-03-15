@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrashTracker - Mapa de Descarte</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <!-- Cabeçalho com logo e nome nem um pouco genérico do site -->
 <header class="fixed-top p-3 text-white d-flex align-items-center justify-content-between">
     <nav id="logo-home">
-            <img src="assets/img/LogoTT.png" alt="Logo TrashTracker" class="logo-header"> <!-- Logo da empresa -->
+            <img src="Img/LogoTT.png" alt="Logo TrashTracker" class="logo-header"> <!-- Logo da empresa -->
             <h1 class="logo-name">TrashTracker</h1>
     </nav>
     <nav>
-        <a href="manual.html" class="btn-nav">Solicitar Coleta</a>
-        <a href="team.html" class="btn-nav">Denúncia</a>
+        <a href="" class="btn-nav">Solicitar Coleta</a>
+        <a href="" class="btn-nav">Denúncia</a>
     </nav>
 </header>
 
@@ -25,13 +29,26 @@
         <input type="text" class="form-control" placeholder="Digite a cidade para encontrar pontos de descarte" id="city-input">
         <div class="input-group-append">
             <button class="gradient-btn search-btn" onclick="searchCity()">
-                <img src="assets/icon/search.svg" alt="Search">
+                <img src="" alt="Search">
             </button>
         </div>
     </div>
 
-    
+    <!-- Mapa -->
+    <div id="map"></div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script src="./script/map.js"></script>
+
+<script>
+
+</script>
+
 
 
 </body>
