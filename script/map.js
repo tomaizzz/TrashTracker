@@ -1,4 +1,4 @@
-// Inicializador do mapa em Joinville
+// Inicializa o mapa em Xoinville
 var map = L.map('map').setView([-26.3044, -48.8464], 13);
 
 // Adiciona o mapa base do OpenStreetMap
@@ -6,7 +6,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Pontos de descarte reais em Jlle - Por algum motivo não ta dando certo e ta indo pra uns lugar todo zoado
+// Pontos de descarte reais em JotaVille - Eles não tão puxando certo, por isso ainda é uma featura que terá de ser avalida se vai pro projeto ou não
 var pontosDescarte = [
     {coords: [-26.2872, -48.8708], tipo: "Reset Descarte Tecnológico - Jardim Iririú"},
     {coords: [-26.2741, -48.8547], tipo: "CEU Aventureiro"},
@@ -31,7 +31,7 @@ var pontosPapelao = [
 
     //Localização Atual.
     var myIcon = L.icon({
-                iconUrl: 'assets/icon/emoji_people_24dp_0000F5_FILL0_wght400_GRAD0_opsz24.svg',  // URL da imagem do ícone padrão
+                iconUrl: 'icon\emoji_people_24dp_0000F5_FILL0_wght400_GRAD0_opsz24.svg',  // URL da imagem do ícone padrão
                 iconSize: [32, 32],  // Tamanho do ícone
                 iconAnchor: [16, 32],  // Posição do ponto de ancoragem (onde o marcador "aponta")
                 popupAnchor: [0, -32],  // Posição do popup
@@ -40,11 +40,11 @@ var pontosPapelao = [
                 shadowAnchor: [13, 41] // Posição da sombra
             });
 
-    //descarte  de Papel. - Explicando oq cada um faz em um só ta ótimo né
+    //descarte  de Papel. - Descrição em um só tá bão né (eu fiz cagada e tive que refazer coisas aqui hein)
     var papelIcon = L.icon({
-                iconUrl: 'assets/icon/pin/azul.svg',  
+                iconUrl: 'icon/azul.svg',  
                 iconSize: [32, 32],  
-                iconAnchor: [16, 32],  
+                iconAnchor: [16, 32], 
                 popupAnchor: [0, -32],  
                 shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png', 
                 shadowSize: [41, 41], 
@@ -53,7 +53,7 @@ var pontosPapelao = [
 
     //descarte de Papelão.
     var papelaoIcon = L.icon({
-                iconUrl: 'assets/icon/pin/marrom.svg', 
+                iconUrl: 'icon/marrom.svg', 
                 iconSize: [32, 32],  
                 iconAnchor: [16, 32],  
                 popupAnchor: [0, -32],  
@@ -64,28 +64,31 @@ var pontosPapelao = [
 
     // descarte Aluminio.
     var aluminioIcon = L.icon({
-                iconUrl: 'assets/icon/pin/amarelo.svg',  
+                iconUrl: 'icon/amarelo.svg',  
                 iconSize: [32, 32],  
                 iconAnchor: [16, 32],  
-                popupAnchor: [0, -32], 
+                popupAnchor: [0, -32],  
                 shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png', 
-                shadowSize: [41, 41], 
+                shadowSize: [41, 41],
                 shadowAnchor: [13, 41] 
             });
     
         // descarte Plástico.
         var plasticoIcon = L.icon({
-            iconUrl: 'assets/icon/pin/vermelho.svg',  
-            iconSize: [32, 32],  
+            iconUrl: 'icon/vermelho.svg',  
+            iconSize: [32, 32], 
             iconAnchor: [16, 32],  
             popupAnchor: [0, -32],  
             shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png', 
-            shadowSize: [41, 41], 
+            shadowSize: [41, 41],
             shadowAnchor: [13, 41] 
         });
+// Filtra, no mapa, os pontos selecionados pelo usuário.
+
+var ativado = true
 
 
-// Adiciona os pontos de descarte ao mapa
+// Adiciona os pontos de descarte reais ao mapa
 const intervalo = setInterval(pontosDescartePapel(), 100)
 
 pontosDescartePapelao()
@@ -97,7 +100,7 @@ pontosDescarteAluminio()
 
 
 
-// Pesquisa e localização de qualquer cidade, desde que escreva o nome certinho pq o openmap é meio zoadinho
+// Pesquisa e localização de cidade
 function searchCity() {
     const city = document.getElementById('city-input').value;
     if (city) {
@@ -132,6 +135,23 @@ function obterLocalizacao() {
             }
         }
 
+// Adicionar Ponto de Descarte
+document.addEventListener("DOMContentLoaded", function () {
+    const addPointButton = document.getElementById("addPointButton");
+    
+    if (addPointButton) {
+        addPointButton.addEventListener("click", function () {
+            const tipo = prompt("Tipo de Ponto de Descarte:");
+            const latitude = prompt("Latitude:");
+            const longitude = prompt("Longitude:");
+
+            if (tipo && latitude && longitude) {
+                L.marker([latitude, longitude], { icon: batteryIcon }).addTo(map)
+                    .bindPopup(`Ponto de descarte: ${tipo}`);
+            }
+        });
+    }
+});
 
 
         // Chamar a função para obter a localização do usuário
