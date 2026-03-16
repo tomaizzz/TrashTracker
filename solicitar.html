@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Solicitar Coleta - TrashTracker</title>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="assets/favicon/favicon.ico">
 <link rel="stylesheet" href="css/solicitar.css">
 
 </head>
@@ -21,24 +23,34 @@
 <h1 class="titulo-pagina">Solicitação de Coleta</h1>
 
 <p class="descricao">
-Preencha o formulário abaixo para solicitar a coleta de materiais volumosos ou resíduos que necessitam de descarte adequado.
+Preencha o formulário abaixo para solicitar a coleta de materiais volumosos ou resíduos que precisam de descarte adequado.
 </p>
+
+
+<!-- ALERTA DE SUCESSO -->
+
+<div id="alerta-sucesso" class="alert alert-success text-center" style="display:none;">
+Coleta solicitada com sucesso! Nossa equipe irá analisar sua solicitação.
+</div>
+
 
 <div class="form-container">
 
-<form>
+<form id="form-coleta">
 
 <label>Nome</label>
-<input type="text" placeholder="Digite seu nome">
+<input type="text" required placeholder="Digite seu nome">
 
 <label>E-mail</label>
-<input type="email" placeholder="Digite seu e-mail">
+<input type="email" required placeholder="Digite seu e-mail">
 
 <label>Endereço para coleta</label>
-<input type="text" placeholder="Rua, número, bairro">
+<input type="text" required placeholder="Rua, número, bairro">
 
 <label>Tipo de material</label>
-<select>
+
+<select required>
+<option value="">Selecione</option>
 <option>Móveis</option>
 <option>Eletrodomésticos</option>
 <option>Eletrônicos</option>
@@ -48,9 +60,11 @@ Preencha o formulário abaixo para solicitar a coleta de materiais volumosos ou 
 </select>
 
 <label>Descrição do material</label>
+
 <textarea rows="4" placeholder="Descreva o material que precisa ser coletado"></textarea>
 
 <label>Anexar foto (opcional)</label>
+
 <input type="file">
 
 <button type="submit">Solicitar Coleta</button>
@@ -61,53 +75,86 @@ Preencha o formulário abaixo para solicitar a coleta de materiais volumosos ou 
 
 <hr class="divisor">
 
-<h2 class="titulo-secao">Como descartar corretamente diferentes materiais</h2>
+<h2 class="titulo-secao">
+Como descartar corretamente diferentes materiais
+</h2>
 
 <div class="manual-descarte">
 
 <div class="card-descarte">
+
 <h3>Papel</h3>
+
 <p>
-Papéis devem estar limpos e secos antes de serem descartados. Remova grampos, clipes e qualquer material metálico.
-Papéis engordurados ou contaminados não devem ser reciclados. Sempre que possível, descarte em locais de coleta seletiva.
+Papéis devem estar limpos e secos antes do descarte. Remova grampos e clipes. Papéis engordurados ou contaminados não devem ser reciclados.
+Sempre descarte em coleta seletiva quando possível.
 </p>
+
 </div>
 
 <div class="card-descarte">
+
 <h3>Plástico</h3>
+
 <p>
-Lave embalagens plásticas para remover restos de alimentos ou líquidos. Separe os plásticos recicláveis e,
-quando possível, compacte embalagens para reduzir o volume. Descarte em pontos de coleta seletiva.
+Lave embalagens para remover restos de alimentos ou líquidos. Separe os plásticos recicláveis e compacte embalagens sempre que possível.
 </p>
+
 </div>
 
 <div class="card-descarte">
+
 <h3>Vidro</h3>
+
 <p>
-Embalagens de vidro devem ser lavadas antes do descarte. Caso estejam quebradas, embale os pedaços em papel grosso
-ou caixa para evitar acidentes. Vidros devem ser levados a pontos de coleta apropriados.
+Vidros devem ser lavados antes do descarte. Caso estejam quebrados, embale em papel grosso ou caixa para evitar acidentes.
 </p>
+
 </div>
 
 <div class="card-descarte">
+
 <h3>Eletrônicos</h3>
+
 <p>
-Equipamentos eletrônicos não devem ser descartados no lixo comum. Celulares, computadores, baterias e cabos
-devem ser levados a pontos de coleta específicos de lixo eletrônico ou lojas que realizem esse tipo de recolhimento.
+Equipamentos eletrônicos não devem ser descartados no lixo comum. Procure pontos de coleta específicos ou lojas que recebam esse tipo de material.
 </p>
+
 </div>
 
 <div class="card-descarte">
+
 <h3>Papelão</h3>
+
 <p>
-Antes de descartar caixas de papelão, certifique-se de que estejam limpas e secas. Retire fitas adesivas
-e dobre as caixas para ocupar menos espaço. O papelão deve ser encaminhado para reciclagem.
+Caixas devem estar limpas e secas. Retire fitas adesivas e dobre as caixas para reduzir o volume antes do descarte.
 </p>
-</div>
 
 </div>
 
 </div>
+
+</div>
+
+
+<script>
+
+document.getElementById("form-coleta").addEventListener("submit", function(event){
+
+event.preventDefault()
+
+document.getElementById("alerta-sucesso").style.display = "block"
+
+this.reset()
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+})
+
+})
+
+</script>
 
 </body>
 </html>
