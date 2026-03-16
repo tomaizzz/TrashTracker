@@ -149,3 +149,10 @@ nav>a:hover{
     text-align: justify;
 }
 
+.titulo-pagina{
+    text-align:center;
+    color:#2e7d32;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
